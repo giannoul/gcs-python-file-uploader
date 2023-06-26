@@ -1,0 +1,9 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: gcs-uploader-service
+spec:
+  selector:
+    app: gcs-uploader
+  ports:
+    - port: 4545

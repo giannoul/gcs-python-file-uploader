@@ -26,7 +26,7 @@ def health():
 def upload_random():
     file = request.files['file']
     upload_blob_from_stream(gcs_bucket, file, secure_filename(file.filename))
-    return {"status" : secure_filename(file.filename)}
+    return {"uploaded" : secure_filename(file.filename)}
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')

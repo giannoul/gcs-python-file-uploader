@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gcs-uploader
+  labels:
+    app: gcs-uploader
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gcs-uploader
+  template:
+    metadata:
+      labels:
+        app: gcs-uploader
+    spec:
+      containers:
+      - name: gcs-uploader
+        image: igiannoulas/gcs-python-file-uploader:sha-7cbe075
+        env:
+        - name: GCS_BUCKET
+          value: thisisacompletelyrandombucket324232rs
+        - name: SA_KEY_PATH
+          value: /app/config/key.json
+        volumeMounts:
+        - name: secret-volume
+          mountPath: /app/config
+        readinessProbe:
+          httpGet:
+            path: /api/health
+            port: 4545
+        livenessProbe:
+          httpGet:
+            path: /api/health
+            port: 4545
+        ports:
+        - containerPort: 4545
+      volumes:
+      - name: secret-volume
+        secret:
+          secretName: gcs-uploader-sa-key
