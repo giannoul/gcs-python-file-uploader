@@ -4,7 +4,8 @@ import os
 from werkzeug.utils import secure_filename
 
 gcs_bucket = os.environ.get('GCS_BUCKET', "")
-storage_client = storage.Client.from_service_account_json('/app/key.json')
+sa_key_path = os.environ.get('SA_KEY_PATH', "")
+storage_client = storage.Client.from_service_account_json(sa_key_path)
 app = Flask(__name__)
 
 def upload_blob_from_stream(bucket_name, file_obj, destination_blob_name):
