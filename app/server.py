@@ -14,9 +14,6 @@ def upload_blob_from_stream(bucket_name, file_obj, destination_blob_name):
     blob = bucket.blob(destination_blob_name)
     file_obj.seek(0)
     blob.upload_from_file(file_obj)
-    print(
-        f"Stream data uploaded to {destination_blob_name} in bucket {bucket_name}."
-    )
 
 @app.route("/api/health")
 def health():

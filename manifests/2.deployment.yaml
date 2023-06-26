@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: gcs-uploader
-        image: igiannoulas/gcs-python-file-uploader:sha-7cbe075
+        image: igiannoulas/gcs-python-file-uploader:latest
         env:
         - name: GCS_BUCKET
           value: thisisacompletelyrandombucket324232rs
