@@ -16,6 +16,8 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: igiannoulas/gcs-python-file-uploader
+          flavor: |
+            latest=auto
           tags: |
             type=sha,enable=true,prefix=sha-,suffix=,format=short
       - name: Set up QEMU
