@@ -31,4 +31,5 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: igiannoulas/gcs-python-file-uploader:latest
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
