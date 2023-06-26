@@ -4,7 +4,7 @@ A showcase of a Python application that is able to upload files to GCS, along wi
 
 ## Instructions
 
-In order to deploy the application you need:
+Edit the following files and set up the In order to deploy the application you need:
 1. edit the file `infrastructure/providers.tf` in order to set up the Google Project name and run `terraform apply` to provision the GCP resources (service account, Google Cloud Storage bucket)
 2. run `make minikube-start` in order for minikube to start with the required ingress plugin
 3. run `make apply-manifests` so that the Kubernetes resources will be created
@@ -38,9 +38,6 @@ By utilizing the GitHub Actions we are able to create a new image on each push. 
 &nbsp;
 
 > Deploy the application on a K8s cluster (you can use MiniKube for spinning a cluster locally) using helm / kubectl / terraform. 
-
-&nbsp;
-&nbsp;
 
 In order to streamline the process we have created a `Makefile` which will create the `minikube` cluster along with the ingress plugin. Then by using `kubectl` through the command `make apply-manifests` we apply the manifests:
 * a `secret` that has the service account json key which is produced by Terraform
