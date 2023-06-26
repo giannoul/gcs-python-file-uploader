@@ -17,7 +17,7 @@ jobs:
         with:
           images: igiannoulas/gcs-python-file-uploader
           flavor: |
-            latest=auto
+            latest=true
           tags: |
             type=sha,enable=true,prefix=sha-,suffix=,format=short
       - name: Set up QEMU
