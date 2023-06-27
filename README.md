@@ -32,7 +32,8 @@ The Python application provides the 2 requested routes. Also it tries to upload 
 
 > Using CI/CD, build a Docker image of the application and push it to a registry any time there is a push on the repo.
 
-By utilizing the GitHub Actions we are able to create a new image on each push. The steps used there are based on [metadata-action](https://github.com/docker/metadata-action) and [build-push-action](https://github.com/docker/build-push-action).
+By utilizing the GitHub Actions we are able to create a new image on each push. The steps used there are based on [metadata-action](https://github.com/docker/metadata-action) and [build-push-action](https://github.com/docker/build-push-action). The built images can be found here:
+* https://hub.docker.com/r/igiannoulas/gcs-python-file-uploader/tags
 
 &nbsp;
 &nbsp;
