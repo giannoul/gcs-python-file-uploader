@@ -1,4 +1,6 @@
 # gcs-python-file-uploader
+![GitHub CI](https://github.com/giannoul/gcs-python-file-uploader/actions/workflows/github-actions-release.yml/badge.svg)
+
 A showcase of a Python application that is able to upload files to GCS, along with the k8s manifests
 
 
